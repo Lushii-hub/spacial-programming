@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Cosmic Adventure: ejecutar juego",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}\\.vscode\\start_game.py",
+            "console": "internalConsole",
+            "internalConsoleOptions": "openOnSessionStart",
+            "redirectOutput": true,
+            "cwd": "${workspaceFolder}",
+            "justMyCode": true,
+            "subProcess": false
+        }
+    ]
+}

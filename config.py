@@ -1,7 +1,8 @@
 # Configuración general del juego
 WIDTH = 800
 HEIGHT = 600
-TITLE = "PONLE UN NOMBRE A TU JUEGO"
+TITLE = "COSMIC ADVENTURE"
+STUDENT_NAME = "LUCIA CAMPOS UMAÑA"
 
 # Estilos de la Interfaz (Colores)
 COLOR_PRIMARY = "cyan"

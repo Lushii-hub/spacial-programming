@@ -3,6 +3,10 @@ import sys
 import time
 import subprocess
 
+
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+MAIN_FILE = os.path.join(PROJECT_DIR, "main.py")
+
 def get_max_mtime(directory):
     max_mtime = 0
     for root, _, files in os.walk(directory):
@@ -23,16 +27,26 @@ def main():
     print("🚀 ¡Auto-reloader de Pygame Zero activado!")
     print("El juego se iniciará y se reiniciará automáticamente al editar cualquier archivo .py.\n")
 
-    # Comando para iniciar el juego usando python3 main.py (o pgzrun)
-    cmd = [sys.executable, "main.py"]
+    # Usa siempre la carpeta real del proyecto, aunque watch.py se abra
+    # mediante doble clic desde C:\\Windows\\System32.
+    os.chdir(PROJECT_DIR)
+
+    # Si existe el entorno virtual del proyecto, usa ese Python.
+    if os.name == "nt":
+        venv_python = os.path.join(PROJECT_DIR, ".venv", "Scripts", "python.exe")
+    else:
+        venv_python = os.path.join(PROJECT_DIR, ".venv", "bin", "python")
+
+    python_command = [venv_python] if os.path.exists(venv_python) else [sys.executable]
+    cmd = python_command + [MAIN_FILE]
     
-    last_mtime = get_max_mtime(".")
-    process = subprocess.Popen(cmd)
+    last_mtime = get_max_mtime(PROJECT_DIR)
+    process = subprocess.Popen(cmd, cwd=PROJECT_DIR)
 
     try:
         while True:
             time.sleep(0.5)
-            current_mtime = get_max_mtime(".")
+            current_mtime = get_max_mtime(PROJECT_DIR)
             
             # Si hay un cambio en algún archivo .py
             if last_mtime > 0 and current_mtime > last_mtime:
@@ -44,7 +58,7 @@ def main():
                         process.wait(timeout=1)
                     except subprocess.TimeoutExpired:
                         process.kill()
-                process = subprocess.Popen(cmd)
+                process = subprocess.Popen(cmd, cwd=PROJECT_DIR)
             elif last_mtime == 0:
                 last_mtime = current_mtime
 

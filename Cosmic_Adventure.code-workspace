@@ -1,0 +1,20 @@
+{
+    "folders": [
+        {
+            "name": "COSMIC ADVENTURE - LUCIA",
+            "path": "."
+        }
+    ],
+    "settings": {
+        "python.terminal.activateEnvironment": true,
+        "workbench.startupEditor": "readme",
+        "files.exclude": {
+            "**/.vscode": true,
+            "**/__pycache__": true,
+            "**/*.pyc": true,
+            "**/1_INSTALAR_Y_ABRIR_JUEGO.bat": true,
+            "**/2_ABRIR_EN_VISUAL_STUDIO_CODE.bat": true,
+            "**/Cosmic_Adventure.code-workspace": true
+        }
+    }
+}
