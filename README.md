@@ -43,26 +43,6 @@ pip install -r requirements.txt
 
 Con el entorno virtual activado (`.venv`), ejecuta el juego con cualquiera de estos dos comandos:
 
-### Abrir el proyecto en Visual Studio Code como en la guía
-
-1. Haz doble clic en `2_ABRIR_EN_VISUAL_STUDIO_CODE.bat`.
-2. El proyecto completo aparecerá en el explorador izquierdo y se abrirá este `README.md`.
-3. Para colocar la vista previa del README a la derecha, presiona `Ctrl + K` y después `V`.
-4. Para mostrar la terminal en la parte inferior, presiona `Ctrl + J`.
-5. Para instalar y ejecutar el juego desde esa terminal, presiona `Ctrl + Shift + B`.
-
-También puedes abrir **Ejecutar y depurar** en la barra izquierda y pulsar el
-botón verde junto a `Cosmic Adventure: ejecutar juego`. Este botón prepara el
-entorno automáticamente la primera vez.
-
-Visual Studio Code utilizará automáticamente el Python 3.12 de la carpeta `.venv`.
-
-### Windows por primera vez (doble clic)
-
-Abre `1_INSTALAR_Y_ABRIR_JUEGO.bat`. Este archivo instala o verifica Python 3.12,
-entra automáticamente en la carpeta correcta, crea el entorno, instala las
-dependencias necesarias y abre el juego. No abras `watch.py` mediante doble clic.
-
 ### Opción A (Recomendada con Auto-reinicio al guardar con Ctrl + S):
 ```bash
 python watch.py
