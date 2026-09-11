@@ -3,7 +3,7 @@ from pgzero.actor import Actor
 from pgzero.loaders import images
 
 class Enemy:
-    def __init__(self, x, y, enemy_type="Enemy", image_name="enemies/alien", width=40, height=32):
+    def __init__(self, x, y, enemy_type="Enemy", image_name="enemies/alien", width=56, height=48):
         self.type_name = enemy_type
         self.image_name = image_name
         self.width = width
@@ -23,8 +23,8 @@ class Enemy:
         self.health = 1
         self.points = 100
 
-    def move(self):
-        self.actor.x -= self.speed
+    def move(self, speed_multiplier=1.0):
+        self.actor.x -= self.speed * speed_multiplier
 
     def take_damage(self, amount=1):
         self.health -= amount
