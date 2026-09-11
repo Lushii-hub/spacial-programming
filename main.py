@@ -14,4 +14,7 @@ def update():
 def on_key_down(key):
     game_manager.on_key_down(key, keys)
 
+def on_mouse_down(pos):
+    game_manager.on_mouse_down(pos)
+
 pgzrun.go()

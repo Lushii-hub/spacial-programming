@@ -8,7 +8,12 @@ __pycache__/
 *.pyd
 
 # VS Code e IDEs
-.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/start_game.py
 .idea/
 *.swp
 .DS_Store
